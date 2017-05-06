@@ -1,0 +1,10 @@
+Raw Tornado LSR for 170412 12Z to 11:59Z the next day
+Time,EF_Scale,Location,County,State,LAT,LON,Remarks
+Raw Wind/Gust LSR for 170412 12Z to 11:59Z the next day
+Time,Speed(MPH),Location,County,State,LAT,LON,Remarks
+Raw Hail LSR for 170412 12Z to 11:59Z the next day
+Time,Size(1/100in.),Location,County,State,LAT,LON,Remarks
+1200,125,4 E ELK,CHAVES,NM,32.93,-105.26,(ABQ)
+1200,175,6 NNW DUNKEN,CHAVES,NM,32.9,-105.23,(ABQ)
+1400,125,1 SW ELK,CHAVES,NM,32.93,-105.35,(ABQ)
+1530,100,10 WSW DEXTER,CHAVES,NM,33.13,-104.53,(ABQ)
