@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<?xml-stylesheet href="latest_ob.xsl" type="text/xsl"?>
+<current_observation version="1.0"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:noNamespaceSchemaLocation="http://www.weather.gov/view/current_observation.xsd">
+	<credit>NOAA's National Weather Service</credit>
+	<credit_URL>http://weather.gov/</credit_URL>
+	<image>
+		<url>http://weather.gov/images/xml_logo.gif</url>
+		<title>NOAA's National Weather Service</title>
+		<link>http://weather.gov</link>
+	</image>
+	<suggested_pickup>15 minutes after the hour</suggested_pickup>
+	<suggested_pickup_period>60</suggested_pickup_period>
+	<location>Rocky Harbour CS, Nfld., NF</location>
+	<station_id>CXRH</station_id>
+	<latitude>49.56667</latitude>
+	<longitude>-57.88333</longitude>
+	<observation_time>Last Updated on Oct 17 2017, 6:00 pm ZDT</observation_time>
+        <observation_time_rfc822>Tue, 17 Oct 2017 18:00:00 +0100</observation_time_rfc822>
+	<temperature_string>41.0 F (5.0 C)</temperature_string>
+	<temp_f>41.0</temp_f>
+	<temp_c>5.0</temp_c>
+	<wind_string>West at 5.8 MPH (5 KT)</wind_string>
+	<wind_dir>West</wind_dir>
+	<wind_degrees>290</wind_degrees>
+	<wind_mph>5.8</wind_mph>
+	<wind_kt>5</wind_kt>
+	<windchill_string>37 F (3 C)</windchill_string>
+      	<windchill_f>37</windchill_f>
+      	<windchill_c>3</windchill_c>
+	<two_day_history_url>http://www.weather.gov/data/obhistory/CXRH.html</two_day_history_url>
+	<ob_url>http://www.weather.gov/data/METAR/CXRH.1.txt</ob_url>
+	<disclaimer_url>http://weather.gov/disclaimer.html</disclaimer_url>
+	<copyright_url>http://weather.gov/disclaimer.html</copyright_url>
+	<privacy_policy_url>http://weather.gov/notice.html</privacy_policy_url>
+</current_observation>

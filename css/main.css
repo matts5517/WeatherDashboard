@@ -1,0 +1,189 @@
+/* Main css styles for the weather extreme app*/
+
+/* Generic style for whole app*/
+body{
+  margin: 0px; height: 100%;
+
+}
+/**{
+  border-color: red; border-style: solid;
+}*/
+/* Input styling for all elems//////////////////////////////////////////////////////////////////////////// */
+input:hover{
+  cursor: pointer;
+}
+input[type=checkbox]:checked{
+  color: red;
+}
+.hide{
+  display: none;
+}
+.hover{
+  color: orange;
+}
+.orangeText{
+  color: orange;
+}
+
+
+
+/* Navigation Bar styling /////////////////////////////////////////////////////////////////////////////*/
+.mainTitle{
+  position: absolute; top: 5px; z-index: 1000;
+}
+.navLogo{
+  color: white; font-size: 24px; font-family: Copperplate, "Copperplate Gothic Light", fantasy; padding: 20px; text-align: left; flex: 1;
+} 
+/*.navWrapper{
+  width: 100%; height: 65px; background-color: black; display: flex; align-items: center;
+
+}
+.navWrapper div{
+  color: white; 
+}
+.navLogo{
+  color: white; font-size: 24px; font-family: Copperplate, "Copperplate Gothic Light", fantasy; padding: 20px; text-align: left; flex: 1;
+}
+.navContentRight{
+  display: flex; margin-left: auto; margin-right: 10px;
+}
+.navContentRight div{
+  padding: 15px; 
+}*/
+
+/* Side bar styling ////////////////////////////////////////////////////////////////////////////////////////*/
+.sideBarNavigation{
+  position: absolute; left: 10px; z-index: 1000; top: 75px; color: white;
+}
+.pillCheckbox:hover{
+  cursor: pointer; color: orange; background-color: rgba(37,61,89,1); 
+}
+.pillCheckbox{
+  color: white; background-color: rgba(37,61,89,.7); margin-top: 5px; margin-bottom: 5px; padding: 10px; border-radius: 1000px; width: 140px;
+}
+.pillText{
+  color: white; opacity: 1;
+}
+.sideBarAttWrapper{
+  background-color: rgba(37,61,89,.7); padding:10px; border-radius: 10px; margin-top: 25px;
+}
+.attributeMinBtn{
+    height: 30px;
+    width: 30px;
+    background-color: #3697d1;
+    border-radius: 100px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    right: -10px;
+    cursor: pointer;
+    line-height: 27px;
+}
+.cntrlWrap{
+  display: none;
+}
+/*.sideBarWrapper{
+  width:25%; height: 100%; background-color: #66778a; position: absolute;
+}
+.slider-container{
+  width: 100%; margin: auto; margin-top: 15px; margin-left: 0px; margin-bottom: 15px;
+}
+.mainIcons{
+  font-size: 27px; margin-right: 9px;
+}*/
+
+/* Current observation styling ///////////////////////////////////////////////////////////////////////////// */
+.currentRadioStyle{
+  display: flex; padding:5px;
+}
+.form-text{
+  margin-left: 5px;
+}
+.cb_slideContent{
+  width: 80%;
+}
+.cb_content{
+  display: flex; justify-content: center;
+}
+/* Severe Weather styling ///////////////////////////////////////////////////////////////////////////// */
+.severeTimeEnable{
+  display: flex; justify-content: center; align-items: center; padding: 5px;
+}
+
+
+
+.CheckWrapper{
+  text-align: center; margin-top: 25px; margin-left: -70px;
+}
+.currentCheckBoxWrapper{
+  margin-left: 10px;
+}
+.currentCheckBoxWrapper .checkBoxLabels{
+  padding: 5px;
+}
+.checkBoxLabels{
+  font-size: 21px;
+}
+.sliderMain{
+  height: 6px !important;
+}
+.slider-container .ui-state-default, .slider-container .ui-widget-content .ui-state-default, .slider-container .ui-widget-header .ui-state-default {
+    border-radius: 100%!important;
+    box-shadow: 0 1px 1px rgba(16,22,26,.1)!important;
+    background: linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0)) 0 no-repeat,50% no-repeat #0096d6!important;
+    border-color: rgba(16,22,26,.1) rgba(16,22,26,.1) rgba(16,22,26,.3)!important;
+    width: 17px!important;
+    height: 17px!important;
+}
+
+/* Map Styling ///////////////////////////////////////////////////////////////////////////////////////////////////*/
+.mapWrapper{
+  height: 100%; width: 100%; float: right; background-color: red; margin: auto; top:0px; right: 0px; position: absolute;
+}
+
+
+/*.sideMapWrap{
+  display: flex; width: 100%;
+}*/
+
+/*side bar styling*/
+/*.controlWrap{
+  display: flex; width: 264px; height: 1000px; background-color: grey;
+}
+.toggleDesc{
+  width: 200px;
+}
+.button{
+  width: 60px;height: 30px; background-color: #f4f4f4;
+}
+.button:hover{
+  background-color: #b8e1fc;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}*/
+
+/*Pop up styles*/
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip,.mapboxgl-popup-anchor-right .mapboxgl-popup-tip{
+  border-right-color: grey;
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip{
+  border-left-color: grey;
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip{
+  border-top-color: grey;
+}
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip{
+  border-bottom-color: grey;
+}
+.mapboxgl-popup-content{
+  background-color: grey; font-size: 20px;
+}
+
+
+.severePlayStop{
+  display: flex; height: 25px; width: 50px; border-style: solid; border-color: red;
+}
+
+
