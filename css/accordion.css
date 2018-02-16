@@ -1,0 +1,97 @@
+/* -----------------
+Accordian styles
+------------------ */
+
+.checkboxWrap{
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #253D59 0%, #1A2B3F 100%);
+  height: 45px;
+  color: white;
+  font: 18px Lato;
+  border-bottom: 2px solid #253D59;
+
+}
+/* sidebar Checkbox on hover ////////////////////////////////////////////////////////////////////*/
+
+.checkboxWrap:hover{
+  cursor: pointer; color: orange;
+}
+
+.checkboxWrap label:hover{
+  cursor: pointer; 
+}
+/* sidebar Checkbox ////////////////////////////////////////////////////////////////////*/
+.checkboxWrap input{
+  margin-left: 12px;
+}
+.checkboxWrap label{
+  margin-left: 8px; width: 88%;
+}
+
+/* Accord content after slide down ///////////////////////////////////////////////////////*/
+.accordContent{
+  display: none; background-color: #121E2B; color: white; 
+} 
+.accordContent label{
+  margin-left: 8px;
+}
+.accordContent label:hover{
+  color:#2F6384; cursor: pointer;
+}
+
+.accordian{
+  
+}
+
+/*content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    opacity: 0.1;
+    background: url(http://l.rgbimg.com/cache1nwIso/users/c/cr/crisderaud/600/mftH3p2.jpg);
+*/
+
+
+.accordian {
+  margin: 0 0 .2em;
+}
+
+.accordian label {
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.accordian input {
+  position: relative;
+  top: -2px;
+  left: -3px;
+}
+.accordian input, .accordian label{
+  margin-left: 15px; margin-top: 8px;
+}
+
+.accordian--content {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: top 10s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+
+.accordian input:checked ~ .accordian--content {
+  height: auto;
+  opacity: 1;
+}
+
+.accordian--inner {
+  padding: 10px 0 0;
+}
+
+#accord1Content{
+  display: none;
+}
+      
