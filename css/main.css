@@ -140,7 +140,7 @@ input[type=checkbox]:checked{
 
 /* Map Styling ///////////////////////////////////////////////////////////////////////////////////////////////////*/
 .mapWrapper{
-  height: 100%; width: 100%; float: right; background-color: red; margin: auto; top:0px; right: 0px; position: absolute;
+  height: 100%; width: 100%; float: right; margin: auto; top:0px; right: 0px; position: absolute;
 }
 
 
