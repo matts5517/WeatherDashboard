@@ -20,8 +20,8 @@ import zipfile
 url = 'http://w1.weather.gov/xml/current_obs/all_xml.zip'
 urllib.urlretrieve (url,'file.zip')
 
-zippedFile = 'file.zip'
-zipDest = 'testFiles'
+zippedFile = 'var/www/html/python/file.zip'
+zipDest = 'var/www/html/python/testFiles'
 zip_ref = zipfile.ZipFile(zippedFile, 'r')
 zip_ref.extractall(zipDest)
 zip_ref.close()
@@ -348,6 +348,14 @@ if windSort == 'yes':
         #print wx.windMPH, wx.tempF ,wx.location
         
 print len(cleanWeatherDataList), ' == number of stations of list after unknown station removal'
+
+# remove files from testFiles directory.
+#import glob
+#
+#files = glob.glob(zipDest + '//')
+#for f in files:
+#    os.remove(f)
+
 
 # -------------------------------------------------------------------
 #Script ends here

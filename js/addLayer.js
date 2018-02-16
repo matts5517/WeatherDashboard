@@ -4,6 +4,7 @@ console.log('looky')
 var addLayers = function(){
     app.lyrList = ['temp_f', 'wind', 'windGust', 'humidity']
     map.on('style.load', function(){
+        console.log(jsonData)
         // map.addSource('temp_f', {
         //     "type": "geojson",
         //     "data": jsonData
