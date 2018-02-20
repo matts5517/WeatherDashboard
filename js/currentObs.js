@@ -8,6 +8,9 @@ var currentObsLayers = function(val){
     $(app.lyrList).each(function(v,c){
         map.setLayoutProperty(c, 'visibility', 'none');
     })
+    console.log(val);
+
+    map.setLayoutProperty('wms-test-layer', 'visibility', 'visible');
     map.setLayoutProperty(val, 'visibility', 'visible');
 };
 

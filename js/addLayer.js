@@ -1,10 +1,23 @@
 
-console.log('looky')
+
 
 var addLayers = function(){
     app.lyrList = ['temp_f', 'wind', 'windGust', 'humidity']
     map.on('style.load', function(){
         console.log(jsonData)
+        // test wms service in map box
+        map.addLayer({
+            'id': 'wms-test-layer',
+            'type': 'raster',
+            'source': {
+                'type': 'raster',
+                'tiles': [
+                    'http://idpgis.ncep.noaa.gov/arcgis/services/NWS_Forecasts_Guidance_Warnings/NDFD_temp/MapServer/WMSServer?'
+                ],
+                'tileSize': 256
+            },
+            'paint': {}
+        }, 'aeroway-taxiway');
         // map.addSource('temp_f', {
         //     "type": "geojson",
         //     "data": jsonData
