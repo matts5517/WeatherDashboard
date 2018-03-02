@@ -66,6 +66,7 @@ $( "#sideBarAttWrapper input" ).on( "click", function(c) {
 	var val = c.currentTarget.value;
 	if(c.currentTarget.checked == true){
 	  	// $('#' + val).slideDown()
+	  	console.log(val)
 	  	currentObsLayers(val); // call the function that controls the visible layers
 	  }else{
 	  	// $('#' + val).slideUp()

@@ -9,9 +9,15 @@ var currentObsLayers = function(val){
         map.setLayoutProperty(c, 'visibility', 'none');
     })
     console.log(val);
-
-    map.setLayoutProperty('wms-test-layer', 'visibility', 'visible');
-    map.setLayoutProperty(val, 'visibility', 'visible');
+    if(val == 'temp_f'){
+    	map.setLayoutProperty(val, 'visibility', 'visible');
+    	map.setLayoutProperty('owm-temp', 'visibility', 'visible');
+    }else if(val == 'wind'){
+    	map.setLayoutProperty(val, 'visibility', 'visible');
+    	map.setLayoutProperty('owm-wind', 'visibility', 'visible');
+    }
+    
+    
 };
 
 var currentSliderChange = function(id, lowerVal, upperVal){

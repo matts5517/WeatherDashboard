@@ -24,6 +24,10 @@ print utcTime
 url = 'http://www.spc.noaa.gov/climo/reports/170831_rpts.csv'
 urllib.urlretrieve (url,'fileSevere.csv')
 
+# url2 = 'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913-m50m/{z}/{x}/{y}.png'
+# urllib.urlretrieve (url,'radar.png')
+
+print 'look'
 jsonData = []
 with open("fileSevere.csv", "rb") as f:
     reader = csv.reader(f, delimiter="\t")
