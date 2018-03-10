@@ -13,7 +13,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+    <!-- bring in terraformer libs -->
+    <script src="https://unpkg.com/terraformer@1.0.8"></script>
+    <script src="https://unpkg.com/terraformer-arcgis-parser@1.0.5"></script>
+    <script src="https://unpkg.com/terraformer-wkt-parser@1.1.2"></script>
     <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -123,6 +126,24 @@
 
                 </div>
               </div>
+               <!--  Pressure Radio Button ////////////////////////////////////////////////// -->
+              <label class="form-component currentRadioStyle" for="e-option">
+                <input type="radio" id="e-option" name="currentObs" value="pressure">
+                <div class="check"></div>
+                <span class="form-text">Pressure</span>
+              </label>
+                <!--  Radar Radio Button ////////////////////////////////////////////////// -->
+              <label class="form-component currentRadioStyle" for="f-option">
+                <input type="radio" id="f-option" name="currentObs" value="radar">
+                <div class="check"></div>
+                <span class="form-text">NEXRAD Radar</span>
+              </label>
+                <!--  Radar + 50 mins Radio Button ////////////////////////////////////////////////// -->
+              <label class="form-component currentRadioStyle" for="g-option">
+                <input type="radio" id="g-option" name="currentObs" value="radar_50">
+                <div class="check"></div>
+                <span class="form-text">NEXRAD Radar + 50 mins</span>
+              </label>
               <!-- End of current obs controls wrapper -->
             </div>
             <div id="severe-CntrlWrap" class="cntrlWrap">
@@ -150,6 +171,7 @@
     -->
     <script type="text/javascript" src="js/colorScale.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/monthlyPrecip.js"></script>
     <script type="text/javascript" src="js/currentObs.js"></script>
     <script type="text/javascript" src="js/addLayer.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

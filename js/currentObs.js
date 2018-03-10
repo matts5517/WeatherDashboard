@@ -15,6 +15,17 @@ var currentObsLayers = function(val){
     }else if(val == 'wind'){
     	map.setLayoutProperty(val, 'visibility', 'visible');
     	map.setLayoutProperty('owm-wind', 'visibility', 'visible');
+    }else if (val == 'windGust') {
+    	map.setLayoutProperty(val, 'visibility', 'visible');
+    	map.setLayoutProperty('owm-wind', 'visibility', 'visible');
+    }else if(val == 'pressure'){
+    	map.setLayoutProperty(val, 'visibility', 'visible');
+    	map.setLayoutProperty('owm-pressure', 'visibility', 'visible');
+    }else if(val == 'humidity'){
+    	map.setLayoutProperty(val, 'visibility', 'visible');
+    	map.setLayoutProperty('humidityColor', 'visibility', 'visible');
+    }else{
+    	map.setLayoutProperty(val, 'visibility', 'visible');
     }
     
     
