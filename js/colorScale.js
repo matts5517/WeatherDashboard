@@ -68,5 +68,12 @@ pressureList = [
     
 ]
 
+allStormList = [
+  [1, '#ef2009'],
+  [2, '#2009ef'],
+  [3, '#1ab701']
+
+]
+
 
 

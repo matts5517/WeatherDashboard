@@ -62,7 +62,7 @@ $( ".pillCheckbox" ).on( "click", function(c) {
 });
 
 // Handle radio buttons for current observations //////////////////////////////////////////////////////////////////
-$( "#sideBarAttWrapper input" ).on( "click", function(c) {
+$( "#currentObs-CntrlWrap input" ).on( "click", function(c) {
 	var val = c.currentTarget.value;
 	if(c.currentTarget.checked == true){
 	  	// $('#' + val).slideDown()
@@ -72,15 +72,23 @@ $( "#sideBarAttWrapper input" ).on( "click", function(c) {
 	  	// $('#' + val).slideUp()
 	  	''
 	  }
-	  // loop through radio buttons and slide up all the others that do not match the current target.
-	  $( "#sideBarAttWrapper input" ).each(function(v,c){
-		   if(c.value == val){
-		   	''
-		   }else{
-		   	 // $('#' + c.value).slideUp()
-		   }
-	});
+	//   // loop through radio buttons and slide up all the others that do not match the current target.
+	//   $( "#currentObs-CntrlWrap input" ).each(function(v,c){
+	// 	   if(c.value == val){
+	// 	   	''
+	// 	   }else{
+	// 	   	 // $('#' + c.value).slideUp()
+	// 	   }
+	// });
 });
+// Handle radio buttons for severe storm reports //////////////////////////////////////////////////////////////////
+$( "#severe-CntrlWrap input" ).on( "click", function(c) {
+	var val = c.currentTarget.value;
+	if(c.currentTarget.checked == true){
+	  	severeLayers(val); // call the function that controls the visible layers
+	  }
+})
+
 
 //layout range slider
 // Temp slider Handeler //////////////////////////////////////////////////////////////////////////////////////////

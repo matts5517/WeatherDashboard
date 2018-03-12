@@ -21,7 +21,7 @@ from datetime import datetime
 utcTime = datetime.utcnow()
 print utcTime
 
-url = 'http://www.spc.noaa.gov/climo/reports/170831_rpts.csv'
+url = 'http://www.spc.noaa.gov/climo/reports/180224_rpts.csv'
 urllib.urlretrieve (url,'fileSevere.csv')
 
 # url2 = 'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913-m50m/{z}/{x}/{y}.png'
@@ -35,11 +35,12 @@ with open("fileSevere.csv", "rb") as f:
         line = str(line)[2:-2]
         listLine = line.split(',')
         time = listLine[0]
-        if 'Raw Tornado LSR' in str(listLine):
+        print listLine
+        if 'F_Scale' in str(listLine):
             reportType = 'tornado'
-        if 'Raw Wind/Gust LSR' in str(listLine):
+        if 'Speed' in str(listLine):
             reportType = 'wind'
-        if 'Raw Hail LSR' in str(listLine):
+        if 'Size' in str(listLine):
             reportType = 'hail'
         try:
             if reportType == 'hail':

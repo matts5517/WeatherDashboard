@@ -27,10 +27,21 @@ var currentObsLayers = function(val){
     }else{
     	map.setLayoutProperty(val, 'visibility', 'visible');
     }
-    
-    
 };
-
+// severe layers viz function ///////////////////////////////////////////////////////////
+var severeLayers = function(val){
+    $(app.severeLayerList).each(function(v,c){
+        map.setLayoutProperty(c, 'visibility', 'none');
+    })
+    // determine which layers to turn on
+    if(val == 'all_stormReport'){
+        map.setLayoutProperty('windReport', 'visibility', 'visible');
+        map.setLayoutProperty('hailReport', 'visibility', 'visible');
+        map.setLayoutProperty('tornadoReport', 'visibility', 'visible');
+    }else{
+        map.setLayoutProperty(val, 'visibility', 'visible');
+    }
+}
 var currentSliderChange = function(id, lowerVal, upperVal){
 	// try{
 	// 	map.removeSource('wind');

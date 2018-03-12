@@ -3,7 +3,9 @@
 var addLayers = function(){
     app.lyrList = ['temp_f', 'wind', 'windGust', 'humidity','humidityColor','pressure', 
     'owm-temp', 'owm-wind', 'owm-windGust', 'owm-clouds', 'owm-pressure', 'radar', 'radar_50']
+    app.severeLayerList = ['windReport', 'hailReport', 'tornadoReport']
     map.on('style.load', function(){
+        console.log(severeDataJson)
         // parse an ArcGIS Geometry to GeoJSON
         // var geojsonPoint = Terraformer.ArcGIS.parse({
         //   "x":-105.6764,
@@ -286,7 +288,83 @@ var addLayers = function(){
             'paint': {}
         }, 'aeroway-taxiway');
 
-         
+// data from severe storm reports geojson file ///////////////////////////////////////////////////////////////////////////////////////
+        // filter out the various storm types
+        // filter out 0 and -1 values
+        var features = $.grep(severeDataJson.features, function(element, index){
+              return element.properties.eventType == 1;
+        });
+        var tornadoData = {"type":"FeatureCollection", features } 
+        // filter out for wind
+        var features = $.grep(severeDataJson.features, function(element, index){
+              return element.properties.eventType == 2;
+        });
+        var windData = {"type":"FeatureCollection", features } 
+        // filter out for hail
+        var features = $.grep(severeDataJson.features, function(element, index){
+              return element.properties.eventType == 3;
+        });
+        var hailData = {"type":"FeatureCollection", features } 
+        // add the wind storm layer 
+        map.addLayer({
+            'id': 'windReport',
+            'type': 'symbol',
+            'source': {
+                "type": "geojson",
+                "data": windData
+            },
+            'layout': {
+                'visibility': 'visible',
+            },
+            "type": "circle",
+            'paint': {
+                'circle-color': {
+                    property: 'eventType',
+                    stops: allStormList
+                }
+            },
+            
+        });
+        // add the hail storm layer
+        map.addLayer({
+            'id': 'hailReport',
+            'type': 'symbol',
+            'source': {
+                "type": "geojson",
+                "data": hailData
+            },
+            'layout': {
+                'visibility': 'visible',
+            },
+            "type": "circle",
+            'paint': {
+                'circle-color': {
+                    property: 'eventType',
+                    stops: allStormList
+                }
+            },
+            
+        });
+        // add the tornado storm layer
+        map.addLayer({
+            'id': 'tornadoReport',
+            'type': 'symbol',
+            'source': {
+                "type": "geojson",
+                "data": tornadoData
+            },
+            'layout': {
+                'visibility': 'visible',
+            },
+            "type": "circle",
+            'paint': {
+                'circle-color': {
+                    property: 'eventType',
+                    stops: allStormList
+                }
+            },
+            
+        });
 
 // data from current observations geojson file ///////////////////////////////////////////////////////////////////////////////////////
         // add the temp layer

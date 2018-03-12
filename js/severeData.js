@@ -1,5 +1,5 @@
-{
-    "type":"FeatureCollection",
+var severeDataJson = { 
+	"type":"FeatureCollection",
     "features":[
         {
             "geometry":{
