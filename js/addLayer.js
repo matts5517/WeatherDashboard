@@ -208,7 +208,7 @@ var addLayers = function(){
         'source': {
             'type': 'raster',
             'tiles': [
-                'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913-m50m/{z}/{x}/{y}.png'
+                'js/img.png'
             ],
             'tileSize': 256
         },

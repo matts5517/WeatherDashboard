@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWF0dHM1NTE3IiwiYSI6ImNpeWo0amtmdTA2MGQzMm9lZWUzbHd1MW4ifQ.AJr1T--2DBpQWH_UEPPIww';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    minZoom: 4,
+    zoom: 3,
+    center: [-100.789, 41.874]
+});
+
+map.on('load', function() {
+
+    var frameCount = 5;
+    for (var i = 0; i < frameCount; i++) {
+
+        map.addLayer({
+            id: 'radar' + i,
+            source: {
+                type: 'image',
+                url: '/assets/latest_radaronly.gif',
+                coordinates: [
+                    [-127.425, 47.437],
+                    [-66.516, 47.437],
+                    [-66.516, 20.936],
+                    [-127.425, 20.936]
+                ]
+            },
+            type: 'raster',
+            paint: {
+                'raster-opacity': 0,
+                'raster-opacity-transition': {
+                    duration: 0
+                }
+            }
+        });
+    }
+
+    var frame = frameCount - 1;
+    setInterval(function() {
+        map.setPaintProperty('radar' + frame, 'raster-opacity', 0);
+        frame = (frame + 1) % frameCount;
+        map.setPaintProperty('radar' + frame, 'raster-opacity', 1);
+    }, 200);
+
+});
+</script>
+
+</body>
+</html>
