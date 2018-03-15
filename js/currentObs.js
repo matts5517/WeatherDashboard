@@ -5,9 +5,12 @@ var test = function(){
 };
 // toggle visibility between layers for current observation radio buttons.
 var currentObsLayers = function(val){
+
     $(app.lyrList).each(function(v,c){
         map.setLayoutProperty(c, 'visibility', 'none');
     })
+    
+
     console.log(val);
     if(val == 'temp_f'){
     	map.setLayoutProperty(val, 'visibility', 'visible');

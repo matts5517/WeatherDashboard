@@ -1,14 +1,25 @@
 // js file for handling the UI of the site ////////////////////////////////////////////////////////////////////////////////////////
 
+// check temp radio button on start
+$("#temp_f-option").prop("checked", true);
 // on main cb click
 	$('.mainCB input').on('click', function(e){
-		console.log(e)
 		if(e.currentTarget.checked){
 			$(e.currentTarget).parent().parent().next().slideDown()
-			console.log('is check')
-			console.log($(e.currentTarget).parent().parent().next().slideDown())
 			// loop through inputs below and figure out which are checked
-			console.log($(e.currentTarget).parent().parent().next().find('input'))
+			$.each($(e.currentTarget).parent().parent().next().find('input'), function(i,v){
+				console.log(e)
+				if(v.checked){
+					if (e.currentTarget.value == 'co') {
+						currentObsLayers(v.value)
+					}else if (e.currentTarget.value == 'sev') {
+						severeLayers(v.value)
+					}else{
+						console.log('its another')
+					}
+					
+				}
+			})
 				// based on if checked 
 
 				// turn on those layer groups by calling the appropriate function
@@ -119,7 +130,7 @@ $( "#currentObs-CntrlWrap input" ).on( "click", function(c) {
 $( "#severe-CntrlWrap input" ).on( "click", function(c) {
 	var val = c.currentTarget.value;
 	if(c.currentTarget.checked == true){
-	  	severeLayers(val); // call the function that controls the visible layers
+	  	currentObsLayers(val); // call the function that controls the visible layers
 	  }
 })
 
