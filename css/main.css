@@ -59,7 +59,10 @@ input[type=checkbox]:checked{
   cursor: pointer; color: orange; background-color: rgba(37,61,89,1); 
 }
 .pillCheckbox{
-  color: white; background-color: rgba(37,61,89,.7); margin-top: 5px; margin-bottom: 5px; padding: 10px; border-radius: 1000px; width: 140px;
+  color: white; background-color: rgba(37,61,89,.7); border-radius: 5px; width: 177px;
+}
+.pillCheckbox label{
+  display: flex; padding: 12px 4px 12px 4px;
 }
 .pillText{
   color: white; opacity: 1;
@@ -82,8 +85,9 @@ input[type=checkbox]:checked{
     line-height: 27px;
 }
 .cntrlWrap{
-  display: none;
+  display: none; background-color: rgba(37,61,89,.5); border-radius: 5px; width: 177px;
 }
+
 /*.sideBarWrapper{
   width:25%; height: 100%; background-color: #66778a; position: absolute;
 }
@@ -96,7 +100,7 @@ input[type=checkbox]:checked{
 
 /* Current observation styling ///////////////////////////////////////////////////////////////////////////// */
 .currentRadioStyle{
-  display: flex; padding:5px;
+  display: flex; padding:5px; margin-left: 14px;
 }
 .form-text{
   margin-left: 5px;
@@ -143,6 +147,8 @@ input[type=checkbox]:checked{
   height: 100%; width: 100%; float: right; margin: auto; top:0px; right: 0px; position: absolute;
 }
 
+
+/*  */
 
 /*.sideMapWrap{
   display: flex; width: 100%;

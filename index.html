@@ -38,28 +38,120 @@
 
   </head>
   <body>
+
       <div class="mainTitle navLogo">WeatherExplorer.net</div>
         <div class="sideBarNavigation">
+         
           <div class="pillCheckbox" id="currentObs-Pill" style="color: orange;">
-            Curent Observations
+            <label class="form-component mainCB" for="current-option">
+              <input checked="true" type="checkbox" id="current-option" name="food">
+              <div class="check"></div>
+              <span class="form-text">Curent Observations</span>
+            </label>
           </div>
+          <!-- Current Obs controls wrapper ////////////////////////////////////////////////////////////// -->
+          <div id="currentObs-CntrlWrap" class="cntrlWrap">
+            <!--  Temp Radio Button ////////////////////////////////////////////////// -->
+            <label class="form-component currentRadioStyle" for="temp_f-option">
+              <input checked="checked" type="radio" id="temp_f-option" name="currentObs" value="temp_f">
+              <div class="check"></div>
+              <span class="form-text">Tempurature</span>
+            </label>
+           
+            
+             <!-- Wind Radio Button ////////////////////////////////////////////////// -->
+            <label class="form-component currentRadioStyle" for="wind-option">
+              <input type="radio" id="wind-option" name="currentObs" value="wind">
+              <div class="check"></div>
+              <span class="form-text">Wind</span>
+            </label>
+
+           
+           
+            <!--  Wind Gust Radio Button ////////////////////////////////////////////////// -->
+            <label class="form-component currentRadioStyle" for="windGust-option">
+              <input type="radio" id="windGust-option" name="currentObs" value="windGust">
+              <div class="check"></div>
+              <span class="form-text">Wind Gust</span>
+            </label>
+           
+            <!--  Humidity Radio Button ////////////////////////////////////////////////// -->
+            <label class="form-component currentRadioStyle" for="humidity-option">
+              <input type="radio" id="humidity-option" name="currentObs" value="humidity">
+              <div class="check"></div>
+              <span class="form-text">Humidity</span>
+            </label>
+          
+             <!--  Pressure Radio Button ////////////////////////////////////////////////// -->
+            <label class="form-component currentRadioStyle" for="pressure-option">
+              <input type="radio" id="pressure-option" name="currentObs" value="pressure">
+              <div class="check"></div>
+              <span class="form-text">Pressure</span>
+            </label>
+              <!--  Radar Radio Button ////////////////////////////////////////////////// -->
+            <!-- <label class="form-component currentRadioStyle" for="f-option">
+              <input type="radio" id="f-option" name="currentObs" value="radar">
+              <div class="check"></div>
+              <span class="form-text">NEXRAD Radar</span>
+            </label> -->
+              <!--  Radar + 50 mins Radio Button ////////////////////////////////////////////////// -->
+            <!-- <label class="form-component currentRadioStyle" for="g-option">
+              <input type="radio" id="g-option" name="currentObs" value="radar_50">
+              <div class="check"></div>
+              <span class="form-text">NEXRAD Radar + 50 mins</span>
+            </label> -->
+            <!-- End of current obs controls wrapper -->
+          </div>
+
+
           <div class="pillCheckbox" id="severe-Pill">
-            Severe Weather
+            <label class="form-component mainCB" for="severe-option">
+              <input type="checkbox" id="severe-option" name="food">
+              <div class="check"></div>
+              <span class="form-text">Severe Weather</span>
+            </label>
           </div>
-          <div class="pillCheckbox" id="winter-Pill">
+          <div id="severe-CntrlWrap" class="cntrlWrap">
+            <!-- Severe Placeholder -->
+             <!--  Severe Storm Reports ////////////////////////////////////////////////// -->
+            <label class="form-component currentRadioStyle" for="aa-option">
+              <input checked="true" type="radio" id="aa-option" name="severe" value="all_stormReport">
+              <div class="check"></div>
+              <span class="form-text">All Storm Reports</span>
+            </label>
+            <!-- Tornado -->
+            <label class="form-component currentRadioStyle" for="bb-option">
+              <input type="radio" id="bb-option" name="severe" value="tornadoReport">
+              <div class="check"></div>
+              <span class="form-text">Tornado Reports</span>
+            </label>
+            <!-- Wind -->
+            <label class="form-component currentRadioStyle" for="cc-option">
+              <input type="radio" id="cc-option" name="severe" value="windReport">
+              <div class="check"></div>
+              <span class="form-text">Wind Reports</span>
+            </label>
+            <!-- Hail -->
+            <label class="form-component currentRadioStyle" for="dd-option">
+              <input type="radio" id="dd-option" name="severe" value="hailReport">
+              <div class="check"></div>
+              <span class="form-text">Hail Reports</span>
+            </label>
+          </div>
+          <div class="pillCheckbox hide" id="winter-Pill">
             Winter Weather
           </div>
-          <div class="pillCheckbox" id="drought-Pill">
+          <div class="pillCheckbox hide" id="drought-Pill">
             Drought
           </div>
-          <div class="pillCheckbox" id="severeHis-Pill">
+          <div class="pillCheckbox hide" id="severeHis-Pill">
             Historical Severe
           </div>
-          <div class="pillCheckbox" id="tropical-Pill">
+          <div class="pillCheckbox hide" id="tropical-Pill">
             Tropical Weather
           </div>
 
-          <div id="sideBarAttWrapper" class="sideBarAttWrapper">
+          <div id="sideBarAttWrapper" class="sideBarAttWrapper hide">
             <div id="attributeMinBtn" class="attributeMinBtn">>></div>
             <!-- Current Obs controls wrapper ////////////////////////////////////////////////////////////// -->
             <div id="currentObs-CntrlWrap" class="cntrlWrap">
