@@ -41,7 +41,7 @@
 
       <div class="mainTitle navLogo">WeatherExplorer.net</div>
         <div class="sideBarNavigation">
-         
+         <!-- current obs main cb -->
           <div class="pillCheckbox" id="currentObs-Pill" style="color: orange;">
             <label class="form-component mainCB" for="current-option">
               <input checked="true" type="checkbox" id="current-option" name="food" value="co">
@@ -103,7 +103,7 @@
             <!-- End of current obs controls wrapper -->
           </div>
 
-
+          <!-- severe storms main cb -->
           <div class="pillCheckbox" id="severe-Pill">
             <label class="form-component mainCB" for="severe-option">
               <input type="checkbox" id="severe-option" name="food" value="sev">
@@ -138,6 +138,26 @@
               <span class="form-text">Hail Reports</span>
             </label>
           </div>
+          <!-- radar main cb  -->
+          <div class="pillCheckbox" id="radar-Pill">
+            <label class="form-component mainCB" for="radar-option">
+              <input type="checkbox" id="radar-option" name="food" value="rad">
+              <div class="check"></div>
+              <span class="form-text">Radar/Satelite</span>
+            </label>
+          </div>
+          <div id="radar-CntrlWrap" class="cntrlWrap">
+            <!-- Current NEXRAD radar  -->
+            <label class="form-component currentRadioStyle" for="nexrad-option">
+              <input checked="checked" type="radio" id="nexrad-option" name="radar" value="rfc_hourly_qpe">
+              <div class="check"></div>
+              <span class="form-text">Nexrad Radar</span>
+            </label>
+
+          </div>
+
+
+
           <div class="pillCheckbox hide" id="winter-Pill">
             Winter Weather
           </div>
@@ -164,10 +184,10 @@
               <!-- Temp content below checkbox -->
               <div class="cb_content">
                 <div id="temp_f" class="cb_slideContent hide" >
-                  <div id="temp_fSliderWrapper" class="slider-container">
+                 <!--  <div id="temp_fSliderWrapper" class="slider-container">
                     <div style="text-align:center; margin-bottom:10px;">Temperature Range: <span class="blueFont">0</span> - <span class='blueFont'>100</span></div>
                     <div id="tempSldr" class="slider sliderMain"></div>
-                  </div>
+                  </div> -->
 
                 </div>
               </div>
@@ -181,10 +201,10 @@
 
               <div class="cb_content">
                 <div id="wind" class="cb_slideContent hide">
-                  <div id="windSliderWrapper" class="slider-container">
+                 <!--  <div id="windSliderWrapper" class="slider-container">
                     <div style="text-align:center; margin-bottom:10px;">Wind Speed Range: <span class="blueFont">0</span> - <span class='blueFont'>100</span></div>
                     <div id="windSldr" class="slider sliderMain"></div>
-                  </div>
+                  </div> -->
 
                 </div>
               </div>
@@ -197,10 +217,10 @@
               </label>
               <div class="cb_content">
                 <div id="windGust" class="cb_slideContent hide">
-                  <div id="windGustSliderWrapper" class="slider-container">
+                  <!-- <div id="windGustSliderWrapper" class="slider-container">
                     <div style="text-align:center; margin-bottom:10px;">Wind Gust Speed Range: <span class="blueFont">0</span> - <span class='blueFont'>100</span></div>
                     <div id="windGustSldr" class="slider sliderMain"></div>
-                  </div>
+                  </div> -->
 
                 </div>
               </div>
@@ -212,10 +232,10 @@
               </label>
               <div class="cb_content">
                 <div id="humidity" class="cb_slideContent hide">
-                  <div id="humiditySliderWrapper" class="slider-container">
+                 <!--  <div id="humiditySliderWrapper" class="slider-container">
                     <div style="text-align:center; margin-bottom:10px;">Humidity Range: <span class="blueFont">0</span> - <span class='blueFont'>100</span></div>
                     <div id="humiditySldr" class="slider sliderMain"></div>
-                  </div>
+                  </div> -->
 
                 </div>
               </div>
@@ -289,7 +309,7 @@
     <script type="text/javascript" src="js/colorScale.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="js/severeData.js"></script>
-    <script type="text/javascript" src="js/monthlyPrecip.js"></script>
+    <!-- <script type="text/javascript" src="js/monthlyPrecip.js"></script> -->
     <script type="text/javascript" src="js/currentObs.js"></script>
     <script type="text/javascript" src="js/addLayer.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

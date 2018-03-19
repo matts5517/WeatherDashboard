@@ -8,16 +8,20 @@ $("#temp_f-option").prop("checked", true);
 			$(e.currentTarget).parent().parent().next().slideDown()
 			// loop through inputs below and figure out which are checked
 			$.each($(e.currentTarget).parent().parent().next().find('input'), function(i,v){
-				console.log(e)
+				// console.log(e)
 				if(v.checked){
 					if (e.currentTarget.value == 'co') {
 						currentObsLayers(v.value)
 					}else if (e.currentTarget.value == 'sev') {
 						severeLayers(v.value)
+					}else if(e.currentTarget.value == 'rad'){
+						radarLayers(v.value);
 					}else{
 						console.log('its another')
 					}
 					
+				}else{
+					console.log(e.currentTarget)
 				}
 			})
 				// based on if checked 
@@ -25,8 +29,16 @@ $("#temp_f-option").prop("checked", true);
 				// turn on those layer groups by calling the appropriate function
 
 
-		}else{
-			console.log('not checked');
+		}else{ // if not checked
+			if (e.currentTarget.value == 'co') {
+				currentObsLayers('null')
+			}
+			if (e.currentTarget.value == 'sev') {
+				severeLayers('null')
+			}
+			if (e.currentTarget.value == 'rad') {
+				radarLayers('null')
+			}
 			$(e.currentTarget).parent().parent().next().slideUp()
 		}
 	})
@@ -130,7 +142,7 @@ $( "#currentObs-CntrlWrap input" ).on( "click", function(c) {
 $( "#severe-CntrlWrap input" ).on( "click", function(c) {
 	var val = c.currentTarget.value;
 	if(c.currentTarget.checked == true){
-	  	currentObsLayers(val); // call the function that controls the visible layers
+	  	severeLayers(val); // call the function that controls the visible layers
 	  }
 })
 

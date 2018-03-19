@@ -1,9 +1,10 @@
 
 // the add layers function adds layers to memory at startup. all layers start as visible=false at startup
 var addLayers = function(){
-    app.lyrList = ['temp_f', 'wind', 'windGust', 'humidity','humidityColor','pressure', 
+    app.lyrList = ['temp_f', 'wind', 'windGust', 'humidity','pressure', 
     'owm-temp', 'owm-wind', 'owm-windGust', 'owm-clouds', 'owm-pressure', 'radar', 'radar_50']
     app.severeLayerList = ['windReport', 'hailReport', 'tornadoReport']
+    app.radarLayerList = ['rfc_hourly_qpe']
     map.on('style.load', function(){
         console.log(severeDataJson)
         // parse an ArcGIS Geometry to GeoJSON
@@ -221,7 +222,30 @@ var addLayers = function(){
 
 	// satalite layers ///////////////////
 
-	// 
+	// radar image from data folder works on the server only
+    // map.addLayer({
+    //         id: 'radar_image',
+    //         source: {
+    //             type: 'image',
+    //             url: 'assets/latest_radaronly.gif',
+    //             coordinates: [
+    //                 // geo refed lat longs. still not perfect
+    //                 [-127.6, 50.4],
+    //                 [-66.49, 49.44],
+    //                 [-66.53, 20.16],
+    //                 [-127.6, 20.7]
+
+    //                 // [-127.62, 49.0],
+    //                 // [-66.516, 49.0],
+    //                 // [-66.516, 20.936],
+    //                 // [-127.62, 20.936]
+    //             ]
+    //         },
+    //         type: 'raster',
+    //         paint: {
+    //             'raster-opacity': 0.1,
+    //         }
+    //     });
 
 
 // services from the ESRI rest endpoint /////////////////////////////////////////////////////////////////////////////////////////////
@@ -314,7 +338,7 @@ var addLayers = function(){
                 "data": windData
             },
             'layout': {
-                'visibility': 'visible',
+                'visibility': 'none',
             },
             "type": "circle",
             'paint': {
@@ -334,7 +358,7 @@ var addLayers = function(){
                 "data": hailData
             },
             'layout': {
-                'visibility': 'visible',
+                'visibility': 'none',
             },
             "type": "circle",
             'paint': {
@@ -354,7 +378,7 @@ var addLayers = function(){
                 "data": tornadoData
             },
             'layout': {
-                'visibility': 'visible',
+                'visibility': 'none',
             },
             "type": "circle",
             'paint': {
@@ -470,7 +494,7 @@ var addLayers = function(){
             },
             // "type": "circle",
             'paint': {
-                "text-color": "black"
+                "text-color": "white"
                 // 'circle-color': {
                 //     property: 'temp_f',
                 //     stops: tempList
@@ -480,7 +504,7 @@ var addLayers = function(){
         });
         // filter out 0 and -1 values
         var features = $.grep(jsonData.features, function(element, index){
-              return element.properties.pressure >= 0;
+              return element.properties.pressure >= 1;
         });
         var pressureData = {"type":"FeatureCollection", features } 
         // pressure layer
@@ -553,27 +577,27 @@ var addLayers = function(){
         //     },
             
         // });
-        //add the humidity layer
-        map.addSource('humidityColor', {
-            "type": "geojson",
-            "data": jsonData
-        });
-        map.addLayer({
-            'id': 'humidityColor',
-            'type': 'circle',
-            'source': 'humidityColor',
-            'layout': {
-                'visibility': 'none'
-            },
-            "type": "circle",
-            'paint': {
-                'circle-color': {
-                    property: 'humidity',
-                    stops: humidityList
-                }
-            },
+        // //add the humidity layer with colored circles
+        // map.addSource('humidityColor', {
+        //     "type": "geojson",
+        //     "data": jsonData
+        // });
+        // map.addLayer({
+        //     'id': 'humidityColor',
+        //     'type': 'circle',
+        //     'source': 'humidityColor',
+        //     'layout': {
+        //         'visibility': 'none'
+        //     },
+        //     "type": "circle",
+        //     'paint': {
+        //         'circle-color': {
+        //             property: 'humidity',
+        //             stops: humidityList
+        //         }
+        //     },
             
-        });
+        // });
     })
 }
 
