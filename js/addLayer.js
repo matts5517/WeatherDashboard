@@ -2,9 +2,9 @@
 // the add layers function adds layers to memory at startup. all layers start as visible=false at startup
 var addLayers = function(){
     app.lyrList = ['temp_f', 'wind', 'windGust', 'humidity','pressure', 
-    'owm-temp', 'owm-wind', 'owm-windGust', 'owm-clouds', 'owm-pressure', 'radar', 'radar_50']
+    'owm-temp', 'owm-wind', 'owm-windGust', 'owm-clouds', 'owm-pressure']
     app.severeLayerList = ['windReport', 'hailReport', 'tornadoReport']
-    app.radarLayerList = ['rfc_hourly_qpe']
+    app.radarLayerList = ['rfc_hourly_qpe', 'radar', 'radar_50']
     map.on('style.load', function(){
         console.log(severeDataJson)
         // parse an ArcGIS Geometry to GeoJSON
@@ -209,7 +209,7 @@ var addLayers = function(){
         'source': {
             'type': 'raster',
             'tiles': [
-                'js/img.png'
+                'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q-900913-m50m/{z}/{x}/{y}.png'
             ],
             'tileSize': 256
         },
@@ -265,6 +265,7 @@ var addLayers = function(){
             },
             'paint': {}
         }, 'rfc_hourly_qpe');
+        // nexrad-n0q-900913
 
 
          map.addLayer({

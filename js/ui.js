@@ -145,7 +145,13 @@ $( "#severe-CntrlWrap input" ).on( "click", function(c) {
 	  	severeLayers(val); // call the function that controls the visible layers
 	  }
 })
-
+// Handle radio buttons for radar layers //////////////////////////////////////////////////////////////////
+$( "#radar-CntrlWrap input" ).on( "click", function(c) {
+	var val = c.currentTarget.value;
+	if(c.currentTarget.checked == true){
+	  	radarLayers(val); // call the function that controls the visible layers
+	  }
+})
 
 //layout range slider
 // Temp slider Handeler //////////////////////////////////////////////////////////////////////////////////////////
