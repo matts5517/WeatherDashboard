@@ -393,6 +393,7 @@ var addLayers = function(){
 
 // data from current observations geojson file ///////////////////////////////////////////////////////////////////////////////////////
         // add the temp layer
+        console.log(jsonData)
         map.addLayer({
             'id': 'temp_f',
             'type': 'symbol',
